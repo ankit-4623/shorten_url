@@ -1,0 +1,98 @@
+/* General Styles */
+body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+  }
+  
+  /* Container Styling */
+  .container {
+      background: white;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+  }
+  
+  /* Header */
+  h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4A90E2;
+      margin-bottom: 20px;
+  }
+  
+  /* Form Fields */
+  form div {
+      margin-bottom: 15px;
+      text-align: left;
+  }
+  
+  label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+      display: block;
+      margin-bottom: 5px;
+  }
+  
+  input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s ease-in-out;
+  }
+  
+  input:focus {
+      border-color: #4A90E2;
+      outline: none;
+      box-shadow: 0px 0px 8px rgba(74, 144, 226, 0.3);
+  }
+  
+  /* Submit Button */
+  button {
+      width: 100%;
+      padding: 12px;
+      background: #4A90E2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+  }
+  
+  button:hover {
+      background: #357ABD;
+  }
+  
+  /* Shortened URLs Section */
+  h2 {
+      font-size: 20px;
+      margin-top: 20px;
+      color: #333;
+  }
+  
+  ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  ul li {
+      background: #e9f5ff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-size: 14px;
+      word-break: break-word;
+  }
+  
