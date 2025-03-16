@@ -42,28 +42,43 @@ const server = createServer(async (req, res) => {
         } else if (req.url === '/style.css') {
             return serveFile(res, path.join(__dirname, "public", "style.css"), "text/css");
         }
+        else if(req.url === '/links') {
+            const links = await loadLinks();
+            res.writeHead(200, { "Content-Type": "application/json" });
+            return res.end(JSON.stringify(links))
+        }
+        else{
+          const links = await loadLinks();
+          const shortCode = req.url.slice(1); 
+          if (links[shortCode]) {
+            res.writeHead(302,{location:links[shortCode]})
+            return res.end();
+          } 
+          res.writeHead(500, { "Content-Type": "text/json" });
+          return res.end('Shotenedf URL is not found');
+        }
     }
    
 
     if (req.method === 'POST' && req.url === '/shorten') {
         const links = await loadLinks();
         let body = "";
-
+           
         req.on('data', (chunk) => {
             body += chunk;
-            console.log(JSON.parse(chunk))
+            // console.log(JSON.parse(chunk))
         });
 
         req.on('end', async () => {
           console.log(body)
             try {
-                const { url, shortcode } = JSON.parse(body);
+                const { url, shortCode } = JSON.parse(body);
                 if (!url) {
                     res.writeHead(400, { "Content-Type": "application/json" });
                     return res.end(JSON.stringify({ error: "URL is required." }));
                 }
 
-                const finalShortcode = shortcode || crypto.randomBytes(4).toString("hex");
+                const finalShortcode = shortCode
 
                 if (links[finalShortcode]) {
                     res.writeHead(400, { "Content-Type": "application/json" });
