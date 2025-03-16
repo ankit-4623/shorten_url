@@ -28,12 +28,13 @@
             const fetchShotenedURL = async() =>{
                 const res = await fetch("/links")
                 const links = await res.json();
-                console.log(links)
+                       
                 const list  = document.getElementById('shortened-urls')
                 list.innerHTML = "";
                 for (const [shortCode, url] of Object.entries(links)) {
                         const li = document.createElement('li');
-                        li.innerHTML = `<a href="/${shortCode}" target="_blank">${window.location.origin}/${shortCode}</a> -${url}`
+                        const truncatedUrl = url.length>=30?`${url.slice(0,30)}...`:url;
+                        li.innerHTML = `<a href="/${shortCode}" target="_blank">${window.location.origin}/${shortCode}</a> -${truncatedUrl}`
                         list.appendChild(li)
                 }
                   
