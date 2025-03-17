@@ -19,7 +19,7 @@
 <h3>Steps</h3>
 <ol>
     <li>Clone the repository:
-        <pre><code>git clone &lt;repository_url&gt;
+        <pre><code>git clone &lt;https://github.com/ankit-4623/shorten_url.git&gt;
         
         
         <h2>cd shorten_url_project
