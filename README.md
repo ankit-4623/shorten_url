@@ -54,4 +54,4 @@ Open http://localhost:3000 in your browser.</h2>
 <p>Ankit Nayek</p>
 
 <h2>Screenshot</h2>
-<img src="./image/Screenshot.png" alt="Project Screenshot" width="600" height="600">
+<img src="https://github.com/ankit-4623/shorten_url/blob/be62fd0a3e4b8a29f3db9b748ae0ed2b32cdfc03/image/Screenshot.png" alt="Project Screenshot" width="600" height="600">
